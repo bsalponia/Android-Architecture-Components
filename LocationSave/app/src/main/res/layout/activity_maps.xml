@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    android:focusableInTouchMode="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_above="@+id/linearBottom"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <fragment
+                map:uiZoomGestures="true"
+                map:cameraZoom="17"
+                map:mapType="normal"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".AddressActivity" />
+
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:tint="@color/colorAccent"
+                    android:layout_marginBottom="18dp"
+                    android:src="@drawable/ic_marker"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearCurrent"
+                android:elevation="2dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/shape_direction_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:tint="@color/blackNinety"
+                    android:src="@drawable/ic_my_location"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingBottom="24dp"
+        android:id="@+id/linearBottom"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingEnd="24dp"
+            android:paddingStart="24dp"
+            android:paddingTop="24dp"
+            android:text="LOCATION"
+            android:textColor="@color/blackNinety"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:minLines="2"
+            android:maxLines="2"
+            android:paddingEnd="24dp"
+            android:paddingStart="24dp"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:id="@+id/txtLocation"
+            android:textSize="14sp"
+            android:textColor="@color/blackNinety"
+            tools:text="Delhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="Save"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSaved"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="Saved Address"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
